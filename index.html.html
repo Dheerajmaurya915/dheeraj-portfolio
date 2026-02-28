@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dheeraj Maurya | Flutter Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ================= ROOT + THEME ================= */
+
+:root{
+  --bg:#0f172a;
+  --card:#111827;
+  --text:#e5e7eb;
+  --accent:#38bdf8;
+}
+
+.light{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+transition:.4s;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+position:sticky;
+top:0;
+backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.2);
+padding:15px 0;
+z-index:1000;
+}
+
+nav .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-weight:700;
+font-size:20px;
+color:var(--accent);
+}
+
+.toggle{
+cursor:pointer;
+background:var(--accent);
+border:none;
+padding:8px 14px;
+border-radius:20px;
+font-weight:600;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+text-align:center;
+padding:100px 20px;
+animation:fadeUp 1s ease;
+}
+
+.hero h1{
+font-size:48px;
+color:var(--accent);
+}
+
+.hero p{
+margin-top:15px;
+opacity:.8;
+max-width:650px;
+margin-inline:auto;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+margin-right:10px;
+padding:12px 26px;
+background:var(--accent);
+color:#000;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+padding:70px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+font-size:28px;
+color:var(--accent);
+}
+
+/* ================= GRID ================= */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:var(--card);
+padding:25px;
+border-radius:15px;
+transition:.35s;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* ================= SKILLS ================= */
+
+.skills span{
+display:inline-block;
+background:rgba(56,189,248,.15);
+padding:8px 14px;
+margin:6px;
+border-radius:20px;
+font-size:14px;
+}
+
+/* ================= APP BUTTON ================= */
+
+.app-btn{
+display:inline-flex;
+align-items:center;
+gap:8px;
+margin-top:12px;
+padding:8px 16px;
+background:#22c55e;
+color:#fff;
+border-radius:25px;
+text-decoration:none;
+font-size:14px;
+font-weight:600;
+transition:.3s;
+}
+
+.app-btn:hover{
+background:#16a34a;
+transform:scale(1.05);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+text-align:center;
+padding:25px;
+opacity:.7;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<div class="container">
+<div class="logo">Dheeraj Maurya</div>
+<button class="toggle" onclick="toggleTheme()">🌙 Mode</button>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Flutter & Mobile App Developer</h1>
+
+<p>
+Building scalable cross-platform mobile applications using Clean Architecture,
+modern UI engineering and enterprise-level development practices.
+</p>
+
+<a class="btn" href="mailto:dheerajmaurya915@gmail.com">
+<i class="fa fa-envelope"></i> Hire Me
+</a>
+
+<a class="btn" href="resume.pdf" download>
+<i class="fa fa-download"></i> Resume
+</a>
+
+<a class="btn" target="_blank"
+href="https://www.linkedin.com/in/dheeraj-maurya/">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+
+<a class="btn" target="_blank"
+href="https://github.com/Dheerajmaurya915">
+<i class="fab fa-github"></i> GitHub
+</a>
+
+</div>
+
+<!-- ABOUT -->
+<section>
+<div class="container">
+<h2 class="section-title">About Me</h2>
+<!-- HERO -->
+<div class="hero">
+
+  <!-- PROFILE IMAGE ADDED -->
+  <img class="profile-img"
+       src="https://media.licdn.com/dms/image/v2/D5603AQE8CGP7T2LRag/profile-displayphoto-scale_400_400/B56ZrGPELmKwAg-/0/1764262431835?e=1773878400&v=beta&t=v8ppW4T6ioaewhFFmcFuR0lNNwdknDf-uywGOQRsW7I"
+       alt="Dheeraj Maurya">
+
+  <h1>Senior Flutter & Mobile App Developer</h1>
+  <p>Building scalable enterprise mobile applications with Clean Architecture, high performance, and modern UI/UX.</p>
+
+  <a class="btn" href="mailto:dheerajmaurya915@gmail.com">Hire Me</a>
+  <a class="btn" href="#" download>Download Resume</a>
+</div>
+<p style="text-align:center;max-width:800px;margin:auto;">
+Mobile App Developer with 3+ years experience building Flutter and Android
+applications. Specialized in scalable architecture, API integrations,
+performance optimization and enterprise logistics platforms.
+</p>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section>
+<div class="container">
+<h2 class="section-title">Skills</h2>
+
+<div class="skills" style="text-align:center;">
+<span>Flutter</span>
+<span>Dart</span>
+<span>Java</span>
+<span>Kotlin</span>
+<span>MVVM</span>
+<span>Clean Architecture</span>
+<span>Bloc</span>
+<span>Firebase</span>
+<span>REST APIs</span>
+<span>SQLite</span>
+<span>Git</span>
+<span>CI/CD</span>
+</div>
+
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+<div class="container">
+<h2 class="section-title">Experience</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Warehousing Express Logistics</h3>
+<p>Mobile App Developer (2025–Present)</p>
+<p>Enterprise logistics & warehouse workflow applications.</p>
+</div>
+
+<div class="card">
+<h3>Vaikomtech Solutions</h3>
+<p>Mobile App Developer (2023–2024)</p>
+<p>OCR, OKYC and API-driven Flutter applications.</p>
+</div>
+
+<div class="card">
+<h3>Logimetrix Techsolutions</h3>
+<p>Android Developer (2022–2023)</p>
+<p>Bluetooth-integrated Android apps with realtime APIs.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+<div class="container">
+<h2 class="section-title">Featured Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>TruckTrack</h3>
+<p>Logistics workflow system with POD tracking & automation.</p>
+<a class="app-btn" target="_blank"
+href="https://play.google.com/store/apps/details?id=YOUR_APP_ID">
+<i class="fa-brands fa-google-play"></i> View App
+</a>
+</div>
+
+<div class="card">
+<h3>IDFC Farmer Registration</h3>
+<p>OCR-based KYC onboarding application.</p>
+</div>
+
+<div class="card">
+<h3>HRMS App</h3>
+<p>Employee attendance & workflow management platform.</p>
+<a class="app-btn" target="_blank"
+href="https://play.google.com/store/apps/details?id=YOUR_APP_ID">
+<i class="fa-brands fa-google-play"></i> View App
+</a>
+</div>
+
+<div class="card">
+<h3>Firebase Chat App</h3>
+<p>Realtime messaging with authentication & notifications.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section>
+<div class="container">
+<h2 class="section-title">Contact</h2>
+
+<p style="text-align:center;">
+📧 dheerajmaurya915@gmail.com<br>
+📞 +91 90050 93735<br>
+📍 Gurugram, India<br>
+🔗 <a target="_blank" href="https://www.linkedin.com/in/dheeraj-maurya/">LinkedIn Profile</a>
+</p>
+
+</div>
+</section>
+
+<footer>
+© 2026 Dheeraj Maurya — Flutter Developer Portfolio
+</footer>
+
+<script>
+function toggleTheme(){
+document.body.classList.toggle("light");
+}
+</script>
+
+</body>
+</html>
