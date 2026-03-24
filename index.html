@@ -1,387 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dheeraj Maurya | Senior Flutter Engineer</title>
 
-<title>Dheeraj Maurya | Flutter Developer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+  .timeline{
+  position:relative;
+  max-width:1000px;
+  margin:auto;
+}
 
-/* ================= ROOT + THEME ================= */
+.timeline::after{
+  content:'';
+  position:absolute;
+  width:3px;
+  background:var(--accent);
+  top:0;
+  bottom:0;
+  left:50%;
+  margin-left:-1px;
+}
 
+.timeline-item{
+  padding:20px 40px;
+  position:relative;
+  width:50%;
+}
+
+.timeline-item.left{
+  left:0;
+}
+
+.timeline-item.right{
+  left:50%;
+}
+
+.timeline-item::before{
+  content:'';
+  position:absolute;
+  width:15px;
+  height:15px;
+  background:var(--accent);
+  border-radius:50%;
+  top:25px;
+  z-index:1;
+}
+
+.timeline-item.left::before{
+  right:-8px;
+}
+
+.timeline-item.right::before{
+  left:-8px;
+}
+
+.content{
+  background:var(--glass);
+  padding:20px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.1);
+  transition:.3s;
+}
+
+.content:hover{
+  transform:scale(1.05);
+}
+
+.company{
+  font-size:14px;
+  opacity:.7;
+}
+  .screens{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+  margin-bottom:15px;
+}
+
+.screens img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:10px;
+  transition:.3s;
+}
+
+.screens img:hover{
+  transform:scale(1.05);
+}
+
+.content h3{
+  margin-bottom:6px;
+}
+
+.content p{
+  font-size:14px;
+  opacity:.85;
+}
 :root{
-  --bg:#0f172a;
-  --card:#111827;
+  --bg:#0b1220;
+  --card:rgba(255,255,255,0.05);
   --text:#e5e7eb;
   --accent:#38bdf8;
+  --glass:rgba(255,255,255,0.08);
 }
 
-.light{
-  --bg:#f8fafc;
-  --card:#ffffff;
-  --text:#0f172a;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter}
+body{background:linear-gradient(135deg,#0b1220,#0f172a);color:var(--text)}
+.container{width:90%;max-width:1150px;margin:auto}
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
+nav{position:sticky;top:0;background:rgba(0,0,0,0.4);backdrop-filter:blur(10px);padding:15px 0}
+nav .container{display:flex;justify-content:space-between}
+.logo{color:var(--accent);font-weight:700}
 
-body{
-background:var(--bg);
-color:var(--text);
-transition:.4s;
-}
+.hero{text-align:center;padding:100px 20px}
+.hero img{
+  width:30px;
+  height:300px;
+  border-radius:50%;        /* makes it circular */
+  object-fit:cover;         /* prevents stretching */
+  border:3px solid var(--accent);
+  box-shadow:0 0 20px rgba(56,189,248,0.6);
+  margin-bottom:20px;
+}.hero h1{font-size:42px;color:var(--accent)}
+.hero p{max-width:700px;margin:15px auto;opacity:.85}
 
-.container{
-width:90%;
-max-width:1100px;
-margin:auto;
-}
+.btn{display:inline-block;margin:10px;padding:12px 24px;background:var(--accent);color:#000;border-radius:30px;text-decoration:none;font-weight:600;transition:.3s}
+.btn:hover{transform:scale(1.08)}
 
-/* ================= NAVBAR ================= */
+section{padding:70px 0}
+.section-title{text-align:center;margin-bottom:40px;color:var(--accent);font-size:28px}
 
-nav{
-position:sticky;
-top:0;
-backdrop-filter:blur(10px);
-background:rgba(0,0,0,0.2);
-padding:15px 0;
-z-index:1000;
-}
-
-nav .container{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-weight:700;
-font-size:20px;
-color:var(--accent);
-}
-
-.toggle{
-cursor:pointer;
-background:var(--accent);
-border:none;
-padding:8px 14px;
-border-radius:20px;
-font-weight:600;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-text-align:center;
-padding:100px 20px;
-animation:fadeUp 1s ease;
-}
-
-.hero h1{
-font-size:48px;
-color:var(--accent);
-}
-
-.hero p{
-margin-top:15px;
-opacity:.8;
-max-width:650px;
-margin-inline:auto;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-margin-right:10px;
-padding:12px 26px;
-background:var(--accent);
-color:#000;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* ================= SECTIONS ================= */
-
-section{
-padding:70px 0;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:40px;
-font-size:28px;
-color:var(--accent);
-}
-
-/* ================= GRID ================= */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
 .card{
-background:var(--card);
-padding:25px;
-border-radius:15px;
-transition:.35s;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  background:var(--glass);
+  padding:25px;
+  border-radius:16px;
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.1);
+  transition:.3s;
 }
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-/* ================= SKILLS ================= */
+.card:hover{transform:translateY(-10px)}
 
 .skills span{
-display:inline-block;
-background:rgba(56,189,248,.15);
-padding:8px 14px;
-margin:6px;
-border-radius:20px;
-font-size:14px;
+  display:inline-block;
+  margin:6px;
+  padding:8px 14px;
+  background:rgba(56,189,248,.15);
+  border-radius:20px;
 }
 
-/* ================= APP BUTTON ================= */
+.metric{font-size:26px;color:var(--accent);font-weight:700}
 
-.app-btn{
-display:inline-flex;
-align-items:center;
-gap:8px;
-margin-top:12px;
-padding:8px 16px;
-background:#22c55e;
-color:#fff;
-border-radius:25px;
-text-decoration:none;
-font-size:14px;
-font-weight:600;
-transition:.3s;
-}
-
-.app-btn:hover{
-background:#16a34a;
-transform:scale(1.05);
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-text-align:center;
-padding:25px;
-opacity:.7;
-}
-
-/* ================= ANIMATION ================= */
-
-@keyframes fadeUp{
-from{opacity:0; transform:translateY(40px);}
-to{opacity:1; transform:translateY(0);}
-}
-
+footer{text-align:center;padding:30px;opacity:.6}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
 <div class="container">
 <div class="logo">Dheeraj Maurya</div>
-<button class="toggle" onclick="toggleTheme()">🌙 Mode</button>
+<div>
+<a class="btn" href="mailto:dheerajmaurya915@gmail.com">Hire Me</a>
+</div>
 </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-<h1>Flutter & Mobile App Developer</h1>
+<img src="https://media.licdn.com/dms/image/v2/D5603AQE8CGP7T2LRag/profile-displayphoto-scale_400_400/B56ZrGPELmKwAg-/0/1764262431835?e=1775692800&v=beta&t=X1IPgzJAjuYpjxZ58PMqPQJ4p8AxYe2y3TvoegcXlec" />
+<h1>Senior Flutter Engineer</h1>
+<p>Building scalable, high-performance mobile applications across logistics, fintech, HRMS & enterprise systems with 3+ years experience.</p>
 
-<p>
-Building scalable cross-platform mobile applications using Clean Architecture,
-modern UI engineering and enterprise-level development practices.
-</p>
+<a class="btn"  target="_blank"  href="https://drive.google.com/file/d/1D47FzUF12C6WKESAlao0GrUWhAo16XWm/view?usp=sharing" download>Download Resume</a>
+<a class="btn"  target="_blank" href="https://www.naukri.com/mnjuser/profile" download>Naukri</a>
+<a class="btn"  target="_blank"  href="https://www.linkedin.com/in/dheeraj-maurya/" download>Linkedin</a>
 
-<a class="btn" href="mailto:dheerajmaurya915@gmail.com">
-<i class="fa fa-envelope"></i> Hire Me
-</a>
-
-<a class="btn" href="resume.pdf" download>
-<i class="fa fa-download"></i> Resume
-</a>
-
-<a class="btn" target="_blank"
-href="https://www.linkedin.com/in/dheeraj-maurya/">
-<i class="fab fa-linkedin"></i> LinkedIn
-</a>
-
-<a class="btn" target="_blank"
-href="https://github.com/Dheerajmaurya915">
-<i class="fab fa-github"></i> GitHub
-</a>
-
+<a class="btn" target="_blank" href="https://github.com/Dheerajmaurya915">GitHub</a>
 </div>
 
-<!-- ABOUT -->
 <section>
 <div class="container">
-<h2 class="section-title">About Me</h2>
-<!-- HERO -->
-<div class="hero">
-
-  <!-- PROFILE IMAGE ADDED -->
-  <img class="profile-img"
-       src="https://media.licdn.com/dms/image/v2/D5603AQE8CGP7T2LRag/profile-displayphoto-scale_400_400/B56ZrGPELmKwAg-/0/1764262431835?e=1773878400&v=beta&t=v8ppW4T6ioaewhFFmcFuR0lNNwdknDf-uywGOQRsW7I"
-       alt="Dheeraj Maurya">
-
-  <h1>Senior Flutter & Mobile App Developer</h1>
-  <p>Building scalable enterprise mobile applications with Clean Architecture, high performance, and modern UI/UX.</p>
-
-  <a class="btn" href="mailto:dheerajmaurya915@gmail.com">Hire Me</a>
-  <a class="btn" href="#" download>Download Resume</a>
+<h2 class="section-title">Impact</h2>
+<div class="grid">
+<div class="card"><div class="metric">30+</div><p>Apps Delivered</p></div>
+<div class="card"><div class="metric">500+</div><p>Daily Users</p></div>
+<div class="card"><div class="metric">40%</div><p>Efficiency Improved</p></div>
+<div class="card"><div class="metric"><1%</div><p>Crash Rate</p></div>
 </div>
-<p style="text-align:center;max-width:800px;margin:auto;">
-Mobile App Developer with 3+ years experience building Flutter and Android
-applications. Specialized in scalable architecture, API integrations,
-performance optimization and enterprise logistics platforms.
-</p>
-
 </div>
 </section>
 
-<!-- SKILLS -->
 <section>
 <div class="container">
-<h2 class="section-title">Skills</h2>
-
-<div class="skills" style="text-align:center;">
-<span>Flutter</span>
-<span>Dart</span>
-<span>Java</span>
-<span>Kotlin</span>
-<span>MVVM</span>
-<span>Clean Architecture</span>
-<span>Bloc</span>
-<span>Firebase</span>
-<span>REST APIs</span>
-<span>SQLite</span>
-<span>Git</span>
-<span>CI/CD</span>
+<h2 class="section-title">Technologies</h2>
+<div class="skills" style="text-align:center">
+<span>Flutter</span><span>Dart</span><span>Java</span><span>Kotlin</span>
+<span>Firebase</span><span>REST APIs</span><span>MVVM</span><span>Clean Architecture</span>
+<span>GetX</span><span>Provider</span><span>Riverpod</span>
+<span>Dio</span><span>Retrofit</span><span>CI/CD</span>
+<span>OCR</span><span>Bluetooth</span><span>Camera</span>
+<span>Barcode/QR Scanner</span>
 </div>
-
 </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section>
 <div class="container">
 <h2 class="section-title">Experience</h2>
+<div class="timeline">
 
-<div class="grid">
+  <div class="timeline-item left">
+    <div class="content">
+      <h3>Senior Flutter Developer</h3>
+      <p class="company">V3M Technologies | 2026 – Present</p>
+      <p><b>Tech:</b> Flutter, GetX, Provider, Firebase, REST APIs</p>
+      <p>Improved app performance by 30% and led ERP app development.</p>
+    </div>
+  </div>
 
-<div class="card">
-<h3>Warehousing Express Logistics</h3>
-<p>Mobile App Developer (2025–Present)</p>
-<p>Enterprise logistics & warehouse workflow applications.</p>
-</div>
+  <div class="timeline-item right">
+    <div class="content">
+      <h3>Mobile App Developer</h3>
+      <p class="company">Warehousing Express | 2025 – 2026</p>
+      <p><b>Tech:</b> Flutter, Barcode Scanner, MVVM</p>
+      <p>Reduced manual operations by 40% for 500+ users.</p>
+    </div>
+  </div>
 
-<div class="card">
-<h3>Vaikomtech Solutions</h3>
-<p>Mobile App Developer (2023–2024)</p>
-<p>OCR, OKYC and API-driven Flutter applications.</p>
-</div>
+  <div class="timeline-item left">
+    <div class="content">
+      <h3>Mobile App Developer</h3>
+      <p class="company">Vaikomtech | 2023 – 2024</p>
+      <p><b>Tech:</b> Flutter, OCR, Firebase</p>
+      <p>Reduced onboarding time by 50% using OCR workflows.</p>
+    </div>
+  </div>
 
-<div class="card">
-<h3>Logimetrix Techsolutions</h3>
-<p>Android Developer (2022–2023)</p>
-<p>Bluetooth-integrated Android apps with realtime APIs.</p>
-</div>
+  <div class="timeline-item right">
+    <div class="content">
+      <h3>Android Developer</h3>
+      <p class="company">Logimetrix | 2022 – 2023</p>
+      <p><b>Tech:</b> Java, Kotlin, Bluetooth</p>
+      <p>Reduced manual errors by 40% with hardware integration.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item left">
+    <div class="content">
+      <h3>Android Developer</h3>
+      <p class="company">Yontech | 2021 – 2022</p>
+      <p><b>Tech:</b> Java, GPS, Maps</p>
+      <p>Built offline-first apps for low network areas.</p>
+    </div>
+  </div>
 
 </div>
 </div>
 </section>
 
-<!-- PROJECTS -->
 <section>
 <div class="container">
-<h2 class="section-title">Featured Projects</h2>
-
+<h2 class="section-title">Projects</h2>
 <div class="grid">
+
+<div class="card">
+<h3>SchoolEye</h3>
+
+  <!-- Screenshots on TOP -->
+  <div class="screens">
+    <img src="https://play-lh.googleusercontent.com/PmhVf_yX2ggBhQtRSD4B8jlrUvb0YE-GoTXERouLzUD5AzGMOFyi-3I_ruYk43Y-ng">
+    <img src="https://play-lh.googleusercontent.com/_1pOiSPkRGbXST6rZMv7mthp3waR0ZBomdMvhshQZuaT0ge0yHXj5E1emEJLENV05Bg">
+    <img src="https://play-lh.googleusercontent.com/PmhVf_yX2ggBhQtRSD4B8jlrUvb0YE-GoTXERouLzUD5AzGMOFyi-3I_ruYk43Y-ng">
+    <img src="https://play-lh.googleusercontent.com/_1pOiSPkRGbXST6rZMv7mthp3waR0ZBomdMvhshQZuaT0ge0yHXj5E1emEJLENV05Bg">
+  </div>
+
+  <!-- Details BELOW -->
+<p><b>Tech:</b> Flutter, Provider, Firebase, Dio</p>
+<p>School ERP used by 1000+ users for attendance, performance & communication with real-time updates.</p>
+</div>
+
+<div class="card">
+<h3>HRMEye</h3>
+<p><b>Tech:</b> Flutter, Firebase, REST APIs</p>
+<p>HRMS platform for payroll & attendance, reducing manual HR operations significantly.</p>
+</div>
+
+<div class="card">
+<h3>Multirole App</h3>
+<p><b>Tech:</b> Flutter, Provider, Firebase</p>
+<p>Role-based system with dynamic UI improving workflow efficiency.</p>
+</div>
+
+<div class="card">
+<h3>CollegeEye</h3>
+<p><b>Tech:</b> Flutter, REST APIs, Firebase</p>
+<p>College ERP with real-time sync and scalable architecture.</p>
+</div>
+
+<div class="card">
+<h3>NES Survey App</h3>
+<p><b>Tech:</b> Flutter, GetX, Firebase</p>
+<p>Offline-first survey app with reliable real-time data sync.</p>
+</div>
 
 <div class="card">
 <h3>TruckTrack</h3>
-<p>Logistics workflow system with POD tracking & automation.</p>
-<a class="app-btn" target="_blank"
-href="https://play.google.com/store/apps/details?id=YOUR_APP_ID">
-<i class="fa-brands fa-google-play"></i> View App
-</a>
+<p><b>Tech:</b> Flutter, MVVM, REST APIs</p>
+<p>Logistics automation app reducing manual tracking by 40%.</p>
 </div>
 
 <div class="card">
-<h3>IDFC Farmer Registration</h3>
-<p>OCR-based KYC onboarding application.</p>
+<h3>IDFC KYC App</h3>
+<p><b>Tech:</b> Flutter, OCR, Firebase</p>
+<p>Onboarding system reducing processing time by 60%.</p>
 </div>
 
 <div class="card">
-<h3>HRMS App</h3>
-<p>Employee attendance & workflow management platform.</p>
-<a class="app-btn" target="_blank"
-href="https://play.google.com/store/apps/details?id=YOUR_APP_ID">
-<i class="fa-brands fa-google-play"></i> View App
-</a>
+
+  <!-- Screenshots on TOP -->
+  <div class="screens">
+    <img src="https://play-lh.googleusercontent.com/PmhVf_yX2ggBhQtRSD4B8jlrUvb0YE-GoTXERouLzUD5AzGMOFyi-3I_ruYk43Y-ng">
+    <img src="https://play-lh.googleusercontent.com/_1pOiSPkRGbXST6rZMv7mthp3waR0ZBomdMvhshQZuaT0ge0yHXj5E1emEJLENV05Bg">
+    <img src="https://play-lh.googleusercontent.com/PmhVf_yX2ggBhQtRSD4B8jlrUvb0YE-GoTXERouLzUD5AzGMOFyi-3I_ruYk43Y-ng">
+    <img src="https://play-lh.googleusercontent.com/_1pOiSPkRGbXST6rZMv7mthp3waR0ZBomdMvhshQZuaT0ge0yHXj5E1emEJLENV05Bg">
+  </div>
+
+  <!-- Details BELOW -->
+  
+    <h3>OP1 B2B App</h3>
+    <p><b>Tech:</b> Flutter, Retrofit</p>
+    <p>Warehouse booking & order management with high-volume API handling.</p>
+  
+
 </div>
 
+
 <div class="card">
-<h3>Firebase Chat App</h3>
-<p>Realtime messaging with authentication & notifications.</p>
+<h3>Dinker Admin</h3>
+<p><b>Tech:</b> Java, Bluetooth</p>
+<p>POS-like system for automatic weight capture using hardware integration.</p>
 </div>
 
 </div>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section>
 <div class="container">
 <h2 class="section-title">Contact</h2>
-
-<p style="text-align:center;">
+<p style="text-align:center">
 📧 dheerajmaurya915@gmail.com<br>
 📞 +91 90050 93735<br>
-📍 Gurugram, India<br>
-🔗 <a target="_blank" href="https://www.linkedin.com/in/dheeraj-maurya/">LinkedIn Profile</a>
+📍 Gurugram, India
 </p>
-
 </div>
 </section>
 
-<footer>
-© 2026 Dheeraj Maurya — Flutter Developer Portfolio
-</footer>
-
-<script>
-function toggleTheme(){
-document.body.classList.toggle("light");
-}
-</script>
+<footer>© 2026 Dheeraj Maurya | Flutter Engineer</footer>
 
 </body>
 </html>
