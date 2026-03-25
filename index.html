@@ -9,6 +9,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+    .app-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.app-btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
   .timeline{
   position:relative;
   max-width:1000px;
@@ -75,25 +91,33 @@
   font-size:14px;
   opacity:.7;
 }
-  .screens{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:8px;
-  margin-bottom:15px;
+.slider {
+  overflow: hidden;
+ 
 }
 
-.screens img{
-  width:100%;
-  height:120px;
-  object-fit:cover;
-  border-radius:10px;
-  transition:.3s;
+.slides {
+  display: flex;
+  width: max-content;
+  animation: scroll 10s linear infinite;
 }
 
-.screens img:hover{
-  transform:scale(1.05);
+.slides img {
+  width: 100%; /* adjust size */
+  height: 200px;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 
+/* Infinite smooth scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 .content h3{
   margin-bottom:6px;
 }
@@ -270,82 +294,246 @@ footer{text-align:center;padding:30px;opacity:.6}
 <div class="grid">
 
 <div class="card">
-<h3>SchoolEye</h3>
+<h3>SchoolEye Parents</h3>
 
-  <!-- Screenshots on TOP -->
-  <div class="screens">
-    <img src="https://play-lh.googleusercontent.com/PmhVf_yX2ggBhQtRSD4B8jlrUvb0YE-GoTXERouLzUD5AzGMOFyi-3I_ruYk43Y-ng">
-    <img src="https://play-lh.googleusercontent.com/_1pOiSPkRGbXST6rZMv7mthp3waR0ZBomdMvhshQZuaT0ge0yHXj5E1emEJLENV05Bg">
-    <img src="https://play-lh.googleusercontent.com/PmhVf_yX2ggBhQtRSD4B8jlrUvb0YE-GoTXERouLzUD5AzGMOFyi-3I_ruYk43Y-ng">
-    <img src="https://play-lh.googleusercontent.com/_1pOiSPkRGbXST6rZMv7mthp3waR0ZBomdMvhshQZuaT0ge0yHXj5E1emEJLENV05Bg">
+  <!-- Slider -->
+  <div class="slider">
+    <div class="slides">
+      <img src="https://play-lh.googleusercontent.com/y5MVVPW1RvSx5L4xS0Zc-g_dWCtibeQFrgOqLp_0NBG5evNdyeP9Yin4XSgbKrdaMg">
+      <img src="https://play-lh.googleusercontent.com/PmhVf_yX2ggBhQtRSD4B8jlrUvb0YE-GoTXERouLzUD5AzGMOFyi-3I_ruYk43Y-ng">
+      <img src="https://play-lh.googleusercontent.com/_1pOiSPkRGbXST6rZMv7mthp3waR0ZBomdMvhshQZuaT0ge0yHXj5E1emEJLENV05Bg">
+      <img src="https://play-lh.googleusercontent.com/a550j2kWgS1qoQFDTgAr183ybJpfxtWRRtt_9GfgsbE8w4zJww0VNapPoa5-3DUtHJpH">
+    </div>
   </div>
+  <br>
+
 
   <!-- Details BELOW -->
 <p><b>Tech:</b> Flutter, Provider, Firebase, Dio</p>
 <p>School ERP used by 1000+ users for attendance, performance & communication with real-time updates.</p>
+  <!-- 🔥 APP LINK BUTTON -->
+  <a href="https://play.google.com/store/apps/details?id=com.schooleye.parents&hl=en_IN" target="_blank" class="app-btn">
+    View App 🚀
+  </a>
 </div>
 
 <div class="card">
+    
+      <div class="slider">
+    <div class="slides">
+      <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/WHlglFPwE5PimlUTUxs1T3VHN1yHjJaRZ4olUYC5Q1D9hbyy1VimO43x1pHMXzQHMQ">
+      <img src="https://play-lh.googleusercontent.com/WVFlCxnGKXbhQIysohhvj1KCPo_S14w7n1YTq7PmwXRhg55Wh_g-SgmRUP-Z8wIrGqk">
+     <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/lSkvRW2pTMBFNb6pDvpHJLtyNHyTyzesZchW87UDQxFwPcV_HcUc9Uc32AvG76idwQ">
+      <img src="https://play-lh.googleusercontent.com/WJgPPFDkop8DHKSQiVDjXmkTq3O-IKCHT-YwTfOSB4fX4KrnG6EAHjt5otfAjXDXN_Hi">
+    </div>
+  </div>
+</br>
 <h3>HRMEye</h3>
 <p><b>Tech:</b> Flutter, Firebase, REST APIs</p>
 <p>HRMS platform for payroll & attendance, reducing manual HR operations significantly.</p>
+ <a href="https://play.google.com/store/apps/details?id=com.schooleye.hrmeye&hl=en_IN" target="_blank" class="app-btn">
+    View App 🚀
+  </a>
 </div>
 
 <div class="card">
+    
+      <div class="slider">
+    <div class="slides">
+      <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/IJBJ2sHbJfLrr-ytfj7bQGBko8UHNaYgd5aJ6mKg66Br1ojos3NvP4fD7LSu-TjAYA">
+      <img src="https://play-lh.googleusercontent.com/8KgnXWkZae60P42UfM2iuk7b_nOg_r1CxOlFopEbCv6s3Gdn4ZlSJfPMFdmvSQvGiA">
+     <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/XTJEU_JdQUNxCsNQhqzq7n6mJs0g6smXvKjGxKMA3dqujcaMZzVIzm5iUCE6jSi8OA">
+      <img src="https://play-lh.googleusercontent.com/MPWtvfNfHNiC8mZ3L58yVuECMWkyH3mVNl4JkV32L_TVgmj0bA6tptPC7bXbrRUd0tk">
+    </div>
+  </div>
+</br>
 <h3>Multirole App</h3>
 <p><b>Tech:</b> Flutter, Provider, Firebase</p>
 <p>Role-based system with dynamic UI improving workflow efficiency.</p>
+  <!-- 🔥 APP LINK BUTTON -->
+  <a href="https://play.google.com/store/apps/details?id=com.schooleye.multirole&hl=en_IN" target="_blank" class="app-btn">
+    View App 🚀
+  </a>
 </div>
 
 <div class="card">
+    
+      <div class="slider">
+    <div class="slides">
+      <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/QmHfWJXrOeU4cTMhwm5ChPjoKCzBDOSpwrovajBfIBSfsqYjpNqsz5C2eArZX416dc-AhbWbGeT1T2KFknboaA">
+      <img src="https://play-lh.googleusercontent.com/DM0OmuJ1MuwkAEAQGoyXSTU8GaQ579wb1qRXKEpk80bcmLr-BPjH20SkRZnbwUWyilx8cJm9KK9WJRiQaaJ0Rb0">
+     <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/wFns5fyQUBgzpPFtoBnR9SzcMOltJXhOJG_N2MClN7PP7GI0ZqXqPfMSGT_lVgn2QNExQ00vTPyUBPQ5lxdf6nk">
+    </div>
+  </div>
+</br>
 <h3>CollegeEye</h3>
 <p><b>Tech:</b> Flutter, REST APIs, Firebase</p>
 <p>College ERP with real-time sync and scalable architecture.</p>
+ <a href="https://play.google.com/store/apps/details?id=com.schooleye.collegeye&hl=en_IN" target="_blank" class="app-btn">
+    View App 🚀
+  </a>
 </div>
 
 <div class="card">
-<h3>NES Survey App</h3>
-<p><b>Tech:</b> Flutter, GetX, Firebase</p>
-<p>Offline-first survey app with reliable real-time data sync.</p>
+    
+
+      <div class="slider">
+    <div class="slides">
+      <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/WW9hbANUub2LUp7x4WONdpLKEv9CxCetbjb1a_sc3uDqIBIJlL6RtfBEtLYHvIOr2Pu51RO4I5pY3KPkb8pJ">
+      <img src="https://play-lh.googleusercontent.com/QN3fGzemrpX5TaI0KWtDpyOkjDEsbrLliig5Gqbq9gZm3sB7ALr46dEv-hulqMAq0VoOjPfXXFT0R0Q7qYHSaVk">
+      <img src="https://play-lh.googleusercontent.com/7tQ3DFFDSyMh6jhJ8DidVtVSo0uvNbNmfyj3HpOg_QaysWDhuXJESO35YgMZhG0bvyuHPswnWCUfvQQ3khm3Jw">
+            <img src="https://play-lh.googleusercontent.com/jvIAvDwsRjUDQR5mCRxWxrz3NoJCj238NbsdakAtd8p4mKiv_arS5FLZK7H-eucRxTYLeTHRb5tcnSenvjG2">
+
+    </div>
+  </div>
+</br>
+<h3>ENTITLED-ERP</h3>
+<p><b>Tech:</b> Flutter, Rest Api,Dart,</p>
+<p>ENTITLED: Next-Gen HRM Solution
+ENTITLED your team! Automate attendance, payroll & performance tracking.</p>
+
+  <!-- 🔥 APP LINK BUTTON -->
+  <a href="https://play.google.com/store/apps/details?id=com.welpl.welpl" target="_blank" class="app-btn">
+    View App 🚀
+  </a>
 </div>
 
+
+
 <div class="card">
+    
+
+      <div class="slider">
+    <div class="slides">
+      <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/UpZ-psHxa1jVHKLQyjnxYbzG3f-WbrZMqcjOZf1Ig8OExP-lB8iq7nEHaijHVNXiwuB8zaTPcklUANU_XOVl0Q">
+      <img src="https://play-lh.googleusercontent.com/zx8r1qP_TcaSnkmAtx03UpB42hsVIK-aegumWm6vPysQKdKkKPd1JQqqR1He_jLCxKLwDZgBgsPPfr-Pd6rlrw">
+     <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/YDh4xYE9dYM6btIdX4l3iWhQFdPNcbAkfRA1svLDZDb5wuqEYtTBky13YkaTmCMqcbcbH6UyYkPdZ6KAU4it">
+      <img src="https://play-lh.googleusercontent.com/L33CqFH4JBLYCH0hPi4q9z9nNOrx8gqp5lKRH-_DEHW1frG-brUFid-Z29wBCtPD2g7rCsO2l6EFDfO9Q8Jcmn0">
+    </div>
+  </div>
+</br>
+
+
+
+  <!-- Details -->
+  <h3>OP1 B2B App</h3>
+  <p><b>Tech:</b> Flutter, Retrofit</p>
+  <p>Warehouse booking & order management with high-volume API handling.</p>
+
+  <!-- 🔥 APP LINK BUTTON -->
+  <a href="https://play.google.com/store/apps/details?id=com.we1.op1" target="_blank" class="app-btn">
+    View App 🚀
+  </a>
+</div>
+
+
+l̥
+<div class="card">
+    
+
+      <div class="slider">
+    <div class="slides">
+      <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/-XmCuqkvaXImYp3JM92GdgEelg3ozO9D8Klng1gW0WY4Kj9UMPsDdx-GCig2NSOEHh8">
+      <img src="https://play-lh.googleusercontent.com/OPPR7xoM076o5aaToV4KbZ6k7CtZTEXRh8YE6ioKGgJekoNYzxY0Tdl1g0Hgkz6kOg">
+      <img src="https://play-lh.googleusercontent.com/cimLkzUD464mDnNE_kGWO6M5dEocZOkSEskOWz3e9bcaSlyo1VfyPPVYVVSKwEQ3vcHu">
+    </div>
+  </div>
+</br>
+<h3>Wezoid</h3>
+<p><b>Tech:</b> Flutter, Rest Api,Dart,</p>
+<p>POS-like system for automatic weight capture using hardware integration.</p>
+
+  <!-- 🔥 APP LINK BUTTON -->
+  <a href="https://play.google.com/store/apps/details?id=com.wezoid.sharechat" target="_blank" class="app-btn">
+    View App 🚀
+  </a>
+</div>
+
+
+<div class="card">
+    
+  <div class="slider">
+    <div class="slides">
+      <img src="https://play-lh.googleusercontent.com/p1o3SzYBrCf4HYY_IIxvR4wsD39XOf_fypvgXuE5fDxl7VgmxvrRp92zwX5t8yIRD0I">
+      <img src="https://play-lh.googleusercontent.com/y1LuYSiBie5lzCCbbRwEyq1ewH2eUB3XQ5g5o0eA-gS-Qu_L397Fu9LXqvgrwDNokGxm">
+      <img src="https://play-lh.googleusercontent.com/DKnMf3Yo8xxKoCJb7EUoCZrzZit7Fn-nI_vz1JBy4GhrgWteaHUU8wLYdn9LlK8yGvo">
+    </div>
+  </div>
+</br>
+
+
+
+  <!-- Details -->
 <h3>TruckTrack</h3>
 <p><b>Tech:</b> Flutter, MVVM, REST APIs</p>
-<p>Logistics automation app reducing manual tracking by 40%.</p>
+<p>Transport Mangment App(TMS):-Logistics  automation app reducing manual tracking by 40%.</p>
+  <!-- 🔥 APP LINK BUTTON -->
+  <a href="https://play.google.com/store/apps/details?id=com.welpl.tms" target="_blank" class="app-btn">
+    View App 🚀
+  </a>
 </div>
 
 <div class="card">
-<h3>IDFC KYC App</h3>
-<p><b>Tech:</b> Flutter, OCR, Firebase</p>
-<p>Onboarding system reducing processing time by 60%.</p>
-</div>
+    
+  <div class="slider">
+    <div class="slides">
+      <img src="https://play-lh.googleusercontent.com/gfTUm8Q_GuNzmjFbRrByDiIxbtxQzbJEjzMZ8E9VoNGosUAyfpqM64UbPxayHd56QA">
+      <img src="https://play-lh.googleusercontent.com/MSQsc2l2ElcepgQwqKKeW-h42u9NhX3aeWwPrHHJ-m-WqdZaxC94Hjx6JVj92v1w_e8">
+      <img src="https://play-lh.googleusercontent.com/abEaxNtqmn1RoDUxrwHRKUq0WOyCrst4oXWy6RmIApexAdd1nZP8IQsiN4HUUhkR">
+     <img src="https://play-lh.googleusercontent.com/V1d-2V9QmihCRD96TPPV5jyN9WHbnYw5cQNqXuwTbh7WJET7Rmvs8xpFMoCu1hs-MQ">
 
-<div class="card">
-
-  <!-- Screenshots on TOP -->
-  <div class="screens">
-    <img src="https://play-lh.googleusercontent.com/PmhVf_yX2ggBhQtRSD4B8jlrUvb0YE-GoTXERouLzUD5AzGMOFyi-3I_ruYk43Y-ng">
-    <img src="https://play-lh.googleusercontent.com/_1pOiSPkRGbXST6rZMv7mthp3waR0ZBomdMvhshQZuaT0ge0yHXj5E1emEJLENV05Bg">
-    <img src="https://play-lh.googleusercontent.com/PmhVf_yX2ggBhQtRSD4B8jlrUvb0YE-GoTXERouLzUD5AzGMOFyi-3I_ruYk43Y-ng">
-    <img src="https://play-lh.googleusercontent.com/_1pOiSPkRGbXST6rZMv7mthp3waR0ZBomdMvhshQZuaT0ge0yHXj5E1emEJLENV05Bg">
+    </div>
   </div>
-
-  <!-- Details BELOW -->
-  
-    <h3>OP1 B2B App</h3>
-    <p><b>Tech:</b> Flutter, Retrofit</p>
-    <p>Warehouse booking & order management with high-volume API handling.</p>
-  
-
+</br>
+  <!-- Details -->
+<h3>IDFC Member Registration</h3>
+<p><b>Tech:</b> Flutter, OCR,OTP,PAN,Room Database</p>
+<p>Agrculture and Milk Farmer Registration For Idfc Foundation.</p>
+  <!-- 🔥 APP LINK BUTTON -->
+  <a href="https://play.google.com/store/apps/details?id=com.vaikomtech.boraj" target="_blank" class="app-btn">
+    View App 🚀
+  </a>
 </div>
 
 
+
+
+
 <div class="card">
+    
+
+      <div class="slider">
+    <div class="slides">
+      <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/UpZ-psHxa1jVHKLQyjnxYbzG3f-WbrZMqcjOZf1Ig8OExP-lB8iq7nEHaijHVNXiwuB8zaTPcklUANU_XOVl0Q">
+      <img src="https://play-lh.googleusercontent.com/zx8r1qP_TcaSnkmAtx03UpB42hsVIK-aegumWm6vPysQKdKkKPd1JQqqR1He_jLCxKLwDZgBgsPPfr-Pd6rlrw">
+     <!-- Original Images -->
+      <img src="https://play-lh.googleusercontent.com/YDh4xYE9dYM6btIdX4l3iWhQFdPNcbAkfRA1svLDZDb5wuqEYtTBky13YkaTmCMqcbcbH6UyYkPdZ6KAU4it">
+      <img src="https://play-lh.googleusercontent.com/L33CqFH4JBLYCH0hPi4q9z9nNOrx8gqp5lKRH-_DEHW1frG-brUFid-Z29wBCtPD2g7rCsO2l6EFDfO9Q8Jcmn0">
+    </div>
+  </div>
+</br>
 <h3>Dinker Admin</h3>
 <p><b>Tech:</b> Java, Bluetooth</p>
 <p>POS-like system for automatic weight capture using hardware integration.</p>
+
+  <!-- 🔥 APP LINK BUTTON -->
+  <a href="https://your-app-link.com" target="_blank" class="app-btn">
+    View App 🚀
+  </a>
 </div>
+
+
 
 </div>
 </div>
